@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
 
-  resources :playlists
+  resources :playlists # resources is a method, allows the routing to all CRUD actions in the playlists controllers
 
   root 'welcome#index' # tells Rails to map requests to the root of the application to the welcome controller's index action
 
