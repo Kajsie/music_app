@@ -1,4 +1,10 @@
 class PlaylistsController < ApplicationController
+  # each instance variable is used for storing the specific instance of a playlist
+  # the instance variables will be passed to the view
+  def show
+    @playlist = Playlist.find(params[:id])
+  end
+
   def new
   end
 
