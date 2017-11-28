@@ -9,15 +9,21 @@ class PlaylistsController < ApplicationController
   end
 
   def new
+    @playlist = Playlist.new
   end
 
   def create
     @playlist = Playlist.new(playlist_params)
 
-    @playlist.save
-    redirect_to @playlist
+    if @playlist.save
+      redirect_to @playlist
+    else
+      render 'new'
+    end
   end
 
+  # redirect_to will issue another request
+  # rendering is done within the same request as the form submission
 
   private
 
