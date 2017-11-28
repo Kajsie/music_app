@@ -3,6 +3,16 @@ class PlaylistsController < ApplicationController
   end
 
   def create
-    render plain: params[:playlist].inspect
+    @playlist = Playlist.new(playlist_params)
+
+    @playlist.save
+    redirect_to @playlist
+  end
+
+
+  private
+
+  def playlist_params
+    params.require(:playlist).permit(:title, :description)
   end
 end
