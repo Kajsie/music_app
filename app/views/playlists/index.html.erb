@@ -13,6 +13,7 @@
       <td><%= playlist.title %></td>
       <td><%= playlist.description %></td>
       <td><%= link_to 'Show', playlist_path(playlist) %></td>
+      <td><%= link_to 'Edit', edit_playlist_path(playlist) %></td>
     </tr>
   <% end %>
 </table>
