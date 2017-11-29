@@ -28,6 +28,15 @@ class PlaylistsController < ApplicationController
 
   # redirect_to will issue another request
   # rendering is done within the same request as the form submission
+  def update
+    @playlist = Playlist.find(params[:id])
+
+    if @playlist.update(playlist_params)
+      redirect_to @playlist
+    else
+      render 'edit'
+    end
+  end
 
   private
 
