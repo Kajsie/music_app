@@ -9,7 +9,7 @@
 </p>
 
 <h2>Add a song</h2>
-<%= form_for([@playlist, @playlist.song.build]) do |f| %>
+<%= form_for([@playlist, @playlist.songs.build]) do |f| %>
   <p>
     <%= f.label :name %>
     <%= f.text_field :name %>
