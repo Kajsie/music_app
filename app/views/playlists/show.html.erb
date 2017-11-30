@@ -3,11 +3,34 @@
   <%= @playlist.title %>
 </p>
 
-
 <p>
   <strong>Description:</strong>
   <%= @playlist.description %>
 </p>
+
+<h2>Add a song</h2>
+<%= form_for([@playlist, @playlist.song.build]) do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :artist %>
+    <%= f.text_field :artist %>
+  </p>
+  <p>
+    <%= f.label :link %>
+    <%= f.text_field :link %>
+  </p>
+  <p>
+    <%= f.label :votes %>
+    <%= f.number_field :votes %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
 
 <%= link_to 'Edit', edit_playlist_path(@playlist) %> |
 <%= link_to 'Back to all playlists', playlists_path %>
