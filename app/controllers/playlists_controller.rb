@@ -1,4 +1,8 @@
 class PlaylistsController < ApplicationController
+
+  http_basic_authenticate_with name: "kajsa", password: "secret",
+  except: [:index, :show] # change authentication later!
+
   def index
     @playlists = Playlist.all
   end
