@@ -14,3 +14,8 @@
   </tr>
 </table>
 
+<p>
+  <%= link_to 'Delete Song', [song.playlist, song],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>
