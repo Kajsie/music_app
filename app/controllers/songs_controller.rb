@@ -1,8 +1,5 @@
 class SongsController < ApplicationController
 
-  http_basic_authenticate_with name: "kajsa", password: "secret", only: :destroy
-  # change authentication later
-
   def create
     @playlist = Playlist.find(params[:playlist_id])
     @song = @playlist.songs.create(song_params)

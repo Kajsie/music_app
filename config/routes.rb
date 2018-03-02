@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :songs # creates nested resources within playlists
   end
   root 'welcome#index' # tells Rails to map requests to the root of the application to the welcome controller's index action
-
+  get '/search_artist', to: 'welcome#search_artist'
+  get '/auth/spotify/callback', to: 'users#spotify'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

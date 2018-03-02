@@ -4,3 +4,12 @@
   <li><%= link_to 'See Playlists', controller: 'playlists' %></li>
   <li><%= link_to 'Create a Playlist', new_playlist_path %></li>
 </ul>
+
+
+<%= link_to "search for artist", search_artist_path %>
+
+
+
+<%= render 'search_artist' %>
+
+<%= link_to 'Sign in with Spotify', '/auth/spotify' %>
