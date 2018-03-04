@@ -1,5 +1,9 @@
-<% if @user_location.present? %>
+<h2>Welcome</h2>
+
+
+<h1>TOP TRACKS</h1>
+<% if @top_artists.present? %>
   <% @top_artists.each do |artist| %>
-    <%= artist %>
+    <%= artist.name %>
   <% end %>
 <% end %>
